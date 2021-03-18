@@ -170,6 +170,25 @@ class MyForm extends React.Component {
 
                 <hr />
 
+                <section>
+                    <h2>Entered information: </h2>
+                    <p>Name: {this.state.firstName} {this.state.lastName}</p>
+                    <p>Age: {this.state.age}</p>
+                    <p>Gender: {this.state.gender}</p>
+                    <p>Main experience: {this.state.mainExperience}</p>
+                    <p>Developer skills:
+                        {this.state.html ? "- HTML -" : null}
+                        {this.state.css ? "- CSS -" : null}
+                        {this.state.javaScript ? "- JavaScript -" : null}
+                        {this.state.testingAndDebugging ? "- Testing and debugging -" : null}
+                        {this.state.git ? "- GIT (Code Versioning) -" : null}
+                        {this.state.backendDatabases ? "- Back-End and Databases -" : null}
+                        {this.state.hosting ? "- Hosting (Public web site) -" : null}
+                        {this.state.libraries ? "- Libraries and frameworks -" : null}
+                    </p>
+                </section>
+            </div>
+        )
     }
 }
 export default MyForm

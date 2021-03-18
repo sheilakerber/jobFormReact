@@ -1,5 +1,9 @@
 import React from "react"
 
+class MyForm extends React.Component {
+    constructor() {
+        super()
+    }
 
 
 
@@ -17,5 +21,6 @@ import React from "react"
                     </label>
                     </label>
 
+    }
 }
 export default MyForm

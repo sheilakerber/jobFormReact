@@ -18,6 +18,7 @@ class MyForm extends React.Component {
             hosting: false,
             libraries: false
         }
+        this.handleChange = this.handleChange.bind(this)
     }
 
     handleChange(event) {

@@ -37,52 +37,58 @@ class MyForm extends React.Component {
         return (
             <div>
                 <form>
-                    <section>
+                    <section className="subSection">
                         <h2>Personal information</h2>
                         <input
                             name="firstName"
-                            placeholder="First Name"
+                            type="text"
+                            placeholder=" First Name"
                             value={this.state.firstName}
                             onChange={this.handleChange}
                         /><br />
 
                         <input
                             name="lastName"
-                            placeholder="Last Name"
+                            type="text"
+                            placeholder=" Last Name"
                             value={this.state.lastName}
                             onChange={this.handleChange}
                         /><br />
 
                         <input
                             name="age"
-                            placeholder="Age"
+                            type="text"
+                            placeholder=" Age"
                             value={this.state.age}
                             onChange={this.handleChange}
                         /><br />
 
-                        <label>
-                            <input
-                                type="radio"
-                                name="gender"
-                                value="Male"
-                                checked={this.state.gender === "Male"}
-                                onChange={this.handleChange}
-                            />
-                        </label>Male
+                        <section className="genderSection">
+                            <span>Gender: </span>
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="gender"
+                                    value="Male"
+                                    checked={this.state.gender === "Male"}
+                                    onChange={this.handleChange}
+                                />
+                            </label>Male
                     <br />
-                        <label>
-                            <input
-                                type="radio"
-                                name="gender"
-                                value="Female"
-                                checked={this.state.gender === "Female"}
-                                onChange={this.handleChange}
-                            />
-                        </label>Female
-                </section>
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="gender"
+                                    value="Female"
+                                    checked={this.state.gender === "Female"}
+                                    onChange={this.handleChange}
+                                />
+                            </label>Female
+                        </section>
+                    </section>
                     <br />
 
-                    <section>
+                    <section className="subSection">
                         <h2>Select the option you have most experience with</h2>
                         <select
                             name="mainExperience"
@@ -98,7 +104,7 @@ class MyForm extends React.Component {
                     </section>
                     <br />
 
-                    <section>
+                    <section className="subSection">
                         <h2>Select your skills as a developer</h2>
                         <label>
                             <input
@@ -164,29 +170,31 @@ class MyForm extends React.Component {
                                 checked={this.state.libraries}
                             />Libraries and frameworks
                     </label>
+
                     </section>
-                    <button>Submit</button>
+
+                    <section className="subSection enteredInfo">
+                        <section>
+                            <h2>Entered information: </h2>
+                            <span>(Please check your answers before submiting)</span>
+                            <p>Name: {this.state.firstName} {this.state.lastName}</p>
+                            <p>Age: {this.state.age}</p>
+                            <p>Gender: {this.state.gender}</p>
+                            <p>Main experience: {this.state.mainExperience}</p>
+                            <p>Developer skills:
+                                {this.state.html ? "- HTML -" : null}
+                                {this.state.css ? "- CSS -" : null}
+                                {this.state.javaScript ? "- JavaScript -" : null}
+                                {this.state.testingAndDebugging ? "- Testing and debugging -" : null}
+                                {this.state.git ? "- GIT (Code Versioning) -" : null}
+                                {this.state.backendDatabases ? "- Back-End and Databases -" : null}
+                                {this.state.hosting ? "- Hosting (Public web site) -" : null}
+                                {this.state.libraries ? "- Libraries and frameworks -" : null}
+                            </p>
+                        </section>
+                        <button>Submit</button>
+                    </section>
                 </form>
-
-                <hr />
-
-                <section>
-                    <h2>Entered information: </h2>
-                    <p>Name: {this.state.firstName} {this.state.lastName}</p>
-                    <p>Age: {this.state.age}</p>
-                    <p>Gender: {this.state.gender}</p>
-                    <p>Main experience: {this.state.mainExperience}</p>
-                    <p>Developer skills:
-                        {this.state.html ? "- HTML -" : null}
-                        {this.state.css ? "- CSS -" : null}
-                        {this.state.javaScript ? "- JavaScript -" : null}
-                        {this.state.testingAndDebugging ? "- Testing and debugging -" : null}
-                        {this.state.git ? "- GIT (Code Versioning) -" : null}
-                        {this.state.backendDatabases ? "- Back-End and Databases -" : null}
-                        {this.state.hosting ? "- Hosting (Public web site) -" : null}
-                        {this.state.libraries ? "- Libraries and frameworks -" : null}
-                    </p>
-                </section>
             </div>
         )
     }
